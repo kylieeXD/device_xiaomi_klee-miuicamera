@@ -1,1 +1,1 @@
-**MiuiCamera for rubyx (Redmi Note 12 Pro/ Plus/ Discovery 5G)**
+**MiuiCamera for rosemary (Redmi Note 10S / 11 SE India / POCO M5s)**
