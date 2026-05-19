@@ -1,4 +1,4 @@
-product/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Snap,Camera2,GoogleCameraGo
+product/priv-app/MiuiCamera/MiuiCamera.apk:system_ext/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Snap,Camera2,GoogleCameraGo
 
 # Camera (Libraries) - from rothko 15 AP3A.240617.008 2.0.16.0.VNNEUXM release-keys
 system/etc/public.libraries-xiaomi.txt
