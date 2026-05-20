@@ -11,6 +11,10 @@ $(call inherit-product, vendor/xiaomi/klee-miuicamera/klee-miuicamera-vendor.mk)
 PRODUCT_PACKAGES += \
     MiuiCameraOverlay
 
+# Public libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-xiaomi.txt
+
 # Priv-app permission
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-miuicamera.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-miuicamera.xml
