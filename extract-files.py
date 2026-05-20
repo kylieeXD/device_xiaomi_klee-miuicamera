@@ -25,9 +25,6 @@ namespace_imports = [
     'vendor/xiaomi/klee'
 ]
 
-def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
-    return f'{lib}-{partition}' if partition == 'vendor' else None
-
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}-{partition}' if partition == 'system_ext' else None
 
