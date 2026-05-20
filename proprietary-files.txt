@@ -1,12 +1,10 @@
+# Camera (Application) - from missi_phone_cn user 14 UP1A.231005.007 OS2.0.3.0.UMOCNXM release-keys
 product/priv-app/MiuiCamera/MiuiCamera.apk:system_ext/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Snap,Camera2,GoogleCameraGo
 
-# Camera (Libraries) - from rothko 15 AP3A.240617.008 2.0.16.0.VNNEUXM release-keys
-system/etc/public.libraries-xiaomi.txt
+# Camera (Libraries) - from missi user 15 AP3A.240905.015.A2 OS2.0.5.0.VLQMIXM release-keys
 system_ext/lib64/libcamera_algoup_jni.xiaomi.so
 system_ext/lib64/libcamera_mianode_jni.xiaomi.so
 system_ext/lib64/libcamera_ispinterface_jni.xiaomi.so
 system_ext/lib64/libmtkisp_metadata_sys.so
 system_ext/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so;MODULE_SUFFIX=-system_ext
 system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so;MODULE_SUFFIX=-system_ext
-vendor/lib64/librelight_only.so
-vendor/lib64/vendor.xiaomi.hardware.quickcamera-V1-ndk_platform.so
