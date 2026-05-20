@@ -44,6 +44,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libgui_shim_miuicamera.so'),
     'system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'system_ext/priv-app/MiuiCamera/MiuiCamera.apk': blob_fixup()
+        .apktool_patch('patches'),
 }
 
 module = ExtractUtilsModule(
