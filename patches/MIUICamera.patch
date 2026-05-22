@@ -7762,5 +7762,46 @@ index 3d230895..f845309c 100644
 +    const/4 v0, 0x1
  
      sput-boolean v0, Lmiuix/os/Build;->IS_INTERNATIONAL_BUILD:Z
+
+diff --git a/smali/com/android/camera/ActivityBase.smali b/smali/com/android/camera/ActivityBase.smali
+index 589348fa..e130f7e9 100644
+--- a/smali/com/android/camera/ActivityBase.smali
++++ b/smali/com/android/camera/ActivityBase.smali
+@@ -612,20 +612,24 @@
+ 
+     .line 2
+     :cond_0
++    const/4 v1, 0x1
++
++    const/4 v2, 0x0
++
+     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mKeyguardManager:Landroid/app/KeyguardManager;
+ 
++    if-eqz v0, :cond_null_km
++
+     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardSecure()Z
+ 
+     move-result v0
+ 
+-    const/4 v1, 0x1
+-
+-    const/4 v2, 0x0
+-
+     if-eqz v0, :cond_1
+ 
+     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mKeyguardManager:Landroid/app/KeyguardManager;
+ 
++    if-eqz v0, :cond_1
++
+     .line 3
+     invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
+ 
+@@ -637,6 +641,7 @@
+ 
+     goto :goto_0
+ 
++    :cond_null_km
+     :cond_1
+     move v0, v2
  
 -- 
