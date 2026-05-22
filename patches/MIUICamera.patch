@@ -7839,5 +7839,54 @@ index 589348fa..e3386fae 100644
 +
      .line 3
      invoke-virtual {v0}, Landroid/app/KeyguardManager;->isKeyguardLocked()Z
+
+diff --git a/smali/com/android/camera/ActivityBase$ActivityHandler.smali b/smali/com/android/camera/ActivityBase$ActivityHandler.smali
+index 0aca0130..b5755b7d 100644
+--- a/smali/com/android/camera/ActivityBase$ActivityHandler.smali
++++ b/smali/com/android/camera/ActivityBase$ActivityHandler.smali
+@@ -100,42 +100,7 @@
+ 
+     .line 3
+     :pswitch_1
+-    new-instance p1, Lcom/android/camera/fragment/dialog/CameraExitHintDialogFragment;
+-
+-    invoke-direct {p1}, Lcom/android/camera/fragment/dialog/CameraExitHintDialogFragment;-><init>()V
+-
+-    const/4 v0, 0x4
+-
+-    .line 4
+-    invoke-virtual {p1, v0}, Lcom/android/camera/fragment/dialog/CameraExitHintDialogFragment;->setErrorType(I)V
+-
+-    .line 5
+-    invoke-virtual {p1, v3, v2}, Landroidx/fragment/app/DialogFragment;->setStyle(II)V
+-
+-    .line 6
+-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+-
+-    move-result-object p0
+-
+-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
+-
+-    move-result-object p0
+-
+-    .line 7
+-    invoke-virtual {p0, p1, v1}, Landroidx/fragment/app/FragmentTransaction;->add(Landroidx/fragment/app/Fragment;Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+-
+-    move-result-object p0
+-
+-    .line 8
+-    invoke-virtual {p0}, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
+-
+-    new-array p0, v6, [Ljava/lang/Object;
+-
+-    const-string/jumbo p1, "on APK version error, finish activity after 3 seconds"
+-
+-    .line 9
+-    invoke-static {v5, p1, p0}, Lcom/android/camera/log/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+-
++    # Patched: skip APK version error dialog (MediaTek porting fix)
+     goto/16 :goto_1
+ 
+     .line 10
  
 -- 
