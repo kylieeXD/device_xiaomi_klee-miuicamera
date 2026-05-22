@@ -7888,5 +7888,42 @@ index 0aca0130..b5755b7d 100644
      goto/16 :goto_1
  
      .line 10
+
+diff --git a/smali/com/android/camera/module/loader/camera2/Camera2OpenOnSubscribe.smali b/smali/com/android/camera/module/loader/camera2/Camera2OpenOnSubscribe.smali
+index 5ede754c..c90999ad 100644
+--- a/smali/com/android/camera/module/loader/camera2/Camera2OpenOnSubscribe.smali
++++ b/smali/com/android/camera/module/loader/camera2/Camera2OpenOnSubscribe.smali
+@@ -40,6 +40,8 @@
+     .end annotation
+ .end field
+ 
++.field private mGlSurfaceReady:Z
++
+ .field private final mSurfaceStateListenerRef:Ljava/lang/ref/Reference;
+     .annotation system Ldalvik/annotation/Signature;
+         value = {
+@@ -281,6 +283,9 @@
+ 
+     :cond_2
+     :goto_0
++    const/4 v0, 0x1
++    iput-boolean v0, p0, Lcom/android/camera/module/loader/camera2/Camera2OpenOnSubscribe;->mGlSurfaceReady:Z
++
+     new-array p0, v1, [Ljava/lang/Object;
+ 
+     const-string/jumbo v0, "onGlSurfaceCreated: mSingleEmitter already disposed"
+@@ -486,6 +491,13 @@
+     .line 3
+     iput-object p1, p0, Lcom/android/camera/module/loader/camera2/Camera2OpenOnSubscribe;->mSingleEmitter:Lio/reactivex/SingleEmitter;
+ 
++    iget-boolean v0, p0, Lcom/android/camera/module/loader/camera2/Camera2OpenOnSubscribe;->mGlSurfaceReady:Z
++    if-eqz v0, :cond_gl_skip
++    iget-object v0, p0, Lcom/android/camera/module/loader/camera2/Camera2OpenOnSubscribe;->mCamera2Result:Lcom/android/camera/module/loader/camera2/Camera2Result;
++    if-eqz v0, :cond_gl_skip
++    invoke-direct {p0, v0}, Lcom/android/camera/module/loader/camera2/Camera2OpenOnSubscribe;->submitResult(Lcom/android/camera/module/loader/camera2/Camera2Result;)V
++    :cond_gl_skip
++
+     .line 4
+     invoke-static {}, Lcom/android/camera/snap/SnapTrigger;->getInstance()Lcom/android/camera/snap/SnapTrigger;
  
 -- 
